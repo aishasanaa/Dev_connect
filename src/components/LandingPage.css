@@ -1,0 +1,136 @@
+/* Make root full screen */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to right, #d8b4fe, #f0abfc);
+}
+
+/* Main container */
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #d8b4fe, #f0abfc);
+}
+
+/* Navbar */
+.landing-navbar {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+ background: linear-gradient(to right, #817093, #f0abfc);
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0077cc;
+}
+
+/* Header */
+.landing-header {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 60px 20px;
+  background: transparent;
+  border-bottom: 1px solid #ddd;
+}
+
+.landing-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.landing-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.landing-cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: 1px solid #333;
+  background-color: #faf7f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.landing-cta:hover {
+  background-color: #eae3d9;
+}
+
+/* Features Section */
+.landing-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  width: 100%;
+  max-width: 1200px;
+  background: linear-gradient(to right, #d8b4fe, #f0abfc);
+}
+
+.feature {
+  width: 300px;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.feature h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.feature p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Footer */
+.landing-footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0ece4;
+  border-top: 1px solid #ccc;
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: #555;
+}
