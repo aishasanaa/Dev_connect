@@ -18,7 +18,8 @@ const LandingPage = () => {
       <header className="landing-header">
         <h1>Welcome to DevConnect</h1>
         <p>Where developers connect, showcase, and grow.</p>
-        <Link to="/register" className="landing-cta">Get Started</Link>
+        <Link to="/get-started" className="landing-cta">Get Started</Link>
+
       </header>
 
       {/* Features Section */}
