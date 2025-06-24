@@ -1,3 +1,79 @@
+// import React, { useEffect, useState } from "react";
+// import axios from "axios";
+
+// function Dashboard() {
+//   const [profile, setProfile] = useState({
+//   name: "",
+//   email: "",
+//   bio: "",
+//   skills: "",
+//   github: "",
+//   experience: "",
+//   projects: ""
+// });
+
+
+//   const [message, setMessage] = useState("");
+
+//   useEffect(() => {
+//     const token = localStorage.getItem("token");
+//     if (token) {
+//       axios
+//         .get("http://localhost:5000/api/auth/profile", {
+//           headers: { Authorization: `Bearer ${token}` },
+//         })
+//         .then((res) => setProfile(res.data))
+//         .catch((err) => console.error("Error loading profile", err));
+//     }
+//   }, []);
+
+//   const handleChange = (e) => {
+//     setProfile({ ...profile, [e.target.name]: e.target.value });
+//   };
+
+//   const handleUpdate = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const token = localStorage.getItem("token");
+//       const res = await axios.put(
+//         "http://localhost:5000/api/auth/profile",
+//         profile,
+//         { headers: { Authorization: `Bearer ${token}` } }
+//       );
+//       setMessage("✅ Profile updated successfully!");
+//     } catch (err) {
+//       setMessage("❌ Failed to update profile.");
+//       console.error(err);
+//     }
+//   };
+
+//   return (
+//     <div style={{ padding: "2rem" }}>
+//       <h2>👤 Your Developer Profile</h2>
+//       <form onSubmit={handleUpdate}>
+//         {["name", "email", "bio", "skills", "github"].map((field) => (
+//           <div key={field} style={{ marginBottom: "10px" }}>
+//             <input
+//               type="text"
+//               name={field}
+//               value={profile[field]}
+//               onChange={handleChange}
+//               placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+//               style={{ width: "100%", padding: "10px", borderRadius: "8px" }}
+//             />
+//           </div>
+//         ))}
+//         <button type="submit" style={{ padding: "10px", borderRadius: "8px", background: "#007bff", color: "white" }}>
+//           Update Profile
+//         </button>
+//       </form>
+//       {message && <p style={{ marginTop: "10px", color: message.includes("❌") ? "red" : "green" }}>{message}</p>}
+//     </div>
+//   );
+// }
+
+// export default Dashboard;
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -8,6 +84,8 @@ function Dashboard() {
     bio: "",
     skills: "",
     github: "",
+    experience: "",
+    projects: ""
   });
 
   const [message, setMessage] = useState("");
@@ -16,7 +94,7 @@ function Dashboard() {
     const token = localStorage.getItem("token");
     if (token) {
       axios
-        .get("http://localhost:5000/api/user/profile", {
+        .get("http://localhost:5000/api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setProfile(res.data))
@@ -32,8 +110,8 @@ function Dashboard() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.put(
-        "http://localhost:5000/api/user/profile",
+      await axios.put(
+        "http://localhost:5000/api/auth/profile",
         profile,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -45,26 +123,58 @@ function Dashboard() {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
       <h2>👤 Your Developer Profile</h2>
       <form onSubmit={handleUpdate}>
-        {["name", "email", "bio", "skills", "github"].map((field) => (
+        {[
+          "name",
+          "email",
+          "bio",
+          "skills",
+          "github",
+          "experience",
+          "projects"
+        ].map((field) => (
           <div key={field} style={{ marginBottom: "10px" }}>
             <input
               type="text"
               name={field}
-              value={profile[field]}
+              value={profile[field] || ""}
               onChange={handleChange}
               placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-              style={{ width: "100%", padding: "10px", borderRadius: "8px" }}
+              style={{
+                width: "100%",
+                padding: "10px",
+                borderRadius: "8px",
+                border: "1px solid #ccc",
+              }}
             />
           </div>
         ))}
-        <button type="submit" style={{ padding: "10px", borderRadius: "8px", background: "#007bff", color: "white" }}>
+        <button
+          type="submit"
+          style={{
+            padding: "10px 20px",
+            borderRadius: "8px",
+            background: "#007bff",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
           Update Profile
         </button>
       </form>
-      {message && <p style={{ marginTop: "10px", color: message.includes("❌") ? "red" : "green" }}>{message}</p>}
+      {message && (
+        <p
+          style={{
+            marginTop: "10px",
+            color: message.includes("❌") ? "red" : "green",
+          }}
+        >
+          {message}
+        </p>
+      )}
     </div>
   );
 }
