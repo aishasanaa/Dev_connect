@@ -17,10 +17,11 @@ const Login = () => {
         email,
         password,
       });
-
-       if (res.data && res.data.message === "Login successful") {
+console.log('response',res.data);
+       if ( res.data.message === "Login successful") {
         localStorage.setItem("email", res.data.email);
        localStorage.setItem("name", res.data.name);
+        localStorage.setItem("userId", res.data.token);
          alert("Login successful!");
          navigate("/dashboard");
        } else {
