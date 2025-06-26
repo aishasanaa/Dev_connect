@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -81,6 +82,8 @@ console.log('response',res.data);
   };
 
   return (
+    <>
+    <Navbar />
     <div style={wrapperStyle}>
       <form onSubmit={handleLogin} style={formContainer}>
         <h2 style={titleStyle}>Login</h2>
@@ -103,6 +106,7 @@ console.log('response',res.data);
         <button type="submit" style={buttonStyle}>Login</button>
       </form>
     </div>
+    </>
   );
 };
 

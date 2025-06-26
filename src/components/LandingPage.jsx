@@ -32,6 +32,11 @@ const LandingPage = () => {
           <h2>Explore Developers</h2>
           <p>View other profiles and connect with fellow devs.</p>
         </section>
+         <section className="feature">
+    <h2>Explore Jobs</h2>
+    <p>Find job opportunities matching your developer profile.</p>
+    <Link to="/jobs" className="feature-link">Go to Jobs</Link>
+  </section>
       </main>
 
       {/* Footer */}

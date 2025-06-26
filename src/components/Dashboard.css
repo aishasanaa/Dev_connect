@@ -1,0 +1,81 @@
+.dashboard-container {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 40px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+/* Stronger glow effect on hover */
+.dashboard-container:hover {
+  box-shadow: 0 0 40px 8px rgba(124, 58, 237, 0.6), 0 0 20px 4px rgba(168, 85, 247, 0.4);
+  transform: translateY(-2px) scale(1.01);
+}
+
+.dashboard-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-container form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.dashboard-container form input:focus {
+  outline: none;
+  border-color: #7c3aed; /* purple focus */
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.dashboard-container button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  background-color: #4a00e0;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-container button:hover {
+  background-color: #5f2eea;
+}
+
+.dashboard-container p {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.view-jobs-btn {
+  background-color: #9333ea;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.view-jobs-btn:hover {
+  background-color: #7e22ce;
+}

@@ -2,9 +2,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./GetStarted.css";
+import Navbar from "./Navbar";
 
 const GetStarted = () => {
   return (
+    <>
+    <Navbar/>
     <div className="get-started-container">
       <h1>Welcome to DevConnect </h1>
       <p>Get started by logging in or creating an account.</p>
@@ -13,6 +16,7 @@ const GetStarted = () => {
         <Link to="/register" className="gs-btn">Register</Link>
       </div>
     </div>
+    </>
   );
 };
 

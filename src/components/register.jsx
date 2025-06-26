@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import API from "../api";
+import Navbar from "./Navbar";
 
 function Register() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
@@ -23,6 +24,8 @@ function Register() {
   };
 
   return (
+    <>
+    <Navbar/>
     <div style={wrapperStyle}>
       <form onSubmit={handleSubmit} style={formStyle}>
         <h2 style={titleStyle}>Register</h2>
@@ -65,6 +68,7 @@ function Register() {
         </p>
       </form>
     </div>
+    </>
   );
 }
 

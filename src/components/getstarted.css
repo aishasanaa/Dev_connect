@@ -4,37 +4,50 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #c084fc, #a855f7);
-  color: white;
+  background: linear-gradient(to right, #e0c3fc, #8ec5fc); /* Softer gradient */
+  color: #2c0735;
   text-align: center;
   padding: 40px 20px;
+  font-family: 'Georgia', serif;
 }
 
 .get-started-container h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #ffffffa8;
 }
 
 .get-started-container p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  color: #4a4a4a;
 }
 
 .get-started-buttons {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .gs-btn {
   background-color: white;
-  color: #9333ea;
+  color: #6a0dad;
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;
-  transition: 0.3s;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 12px rgba(106, 13, 173, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
 .gs-btn:hover {
   background-color: #f3e8ff;
+  color: #4b0082;
+  border: 2px solid #a855f7;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(106, 13, 173, 0.3);
 }
